@@ -1,0 +1,14 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: podwithlabels
+  labels:
+    type: backend
+    city: khi
+    env: production
+spec:
+  containers:
+  - image: yasirdocker/flag:latest
+    name: container1
+    ports:
+    - containerPort: 80
