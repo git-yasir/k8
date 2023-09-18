@@ -1,0 +1,14 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: myfirstpodwithlabels
+  labels:
+    type: backend
+    env: prodcution
+spec:
+  containers:
+  - image: yasirdocker/flag:latest
+    name: container1
+    ports:
+    - containerPort: 80
+    

@@ -1,0 +1,14 @@
+kind: Pod
+apiVersion: v1
+metadata: 
+  name: podwithnodeselector
+spec:
+  nodeselector:
+    typeofharddisk: ssd
+  containers:
+  - name: container1
+    image: yasirdocker/flag:latest
+    Ports:
+    - containerPort: 80
+    
+    
