@@ -1,0 +1,28 @@
+kind: ReplicaSet
+apiVersion: apps/v1
+metadata:
+  name: myrs
+  namespace: prod
+spec:
+  replicas: 2
+  selector:
+    matchExpressions:
+    - key: city
+      operator: In
+      values:
+      - Doha
+    - key: type
+      operator: In
+      values:
+      - backend
+  template:
+    metadata: 
+      labels:
+       city: Doha
+       type: backend
+    spec:
+      containers:
+      - name: rscontainers
+        image: aamirpinger/helloworld:latest
+        ports:
+        - containerPort: 80

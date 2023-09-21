@@ -1,14 +1,20 @@
 kind: Pod
 apiVersion: v1
 metadata:
-  name: podwithannotations
+  name: podwithns
+  namespace: prod
   annotations:
     createdby: "Yasir Butt"
     email: yasir.butt@hotmail.com
+  labels:
+    type: backend
+    city: Islamabad
 spec:
+  nodeSelector:
+    typeofharddisk: ssd 
   containers:
   - name: container-new
     image: yasirdocker/flag:latest
-    Ports:
+    ports:
     - containerPort: 80
     

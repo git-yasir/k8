@@ -1,0 +1,22 @@
+kind: ReplicaSet
+apiVersion: apps/v1
+metadata:
+  name: myrs
+  namespace: prod
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      city: Doha
+      country: Qatar
+  template:
+    metadata: 
+      labels:
+       city: Doha
+       country: Qatar
+    spec:
+      containers:
+      - name: rscontainers
+        image: aamirpinger/helloworld:latest
+        ports:
+        - containerPort: 80
