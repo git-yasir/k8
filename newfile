@@ -1,0 +1,11 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: myfirstpod
+spec:
+  containers:
+  - name: container1
+    image: yasirdocker/flag:latest
+    ports: 
+      - containerPort: 80
+      
